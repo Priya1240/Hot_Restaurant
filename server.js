@@ -19,9 +19,9 @@ app.use(bodyParser.json({
   type: "application/vnd.api+json"
 }));
 
-// Star Wars Characters (DATA)
+// Reservation (DATA)
 // =============================================================
-var characters = [{
+var newReservation = [{
   customerName: "Barak Obama",
   customerEmail: "POTUS44@usa.gov",
   customerID: 001,
@@ -38,13 +38,15 @@ var characters = [{
   phoneNumer: 2124556696
 }];
 
+// =============================================================
 // ROUTES
 // =============================================================
+
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
   // res.send("Welcome to the Star Wars Page!")
-  res.sendFile(path.join(__dirname, "view.html"));
+  res.sendFile(path.join(__dirname, "main.html"));
   //creates absolute path to the file "view.html", depending on where the server is running
 });
 
