@@ -44,12 +44,23 @@ var newReservation = [{
 
 
 // Basic route that sends the user first to the AJAX Page
-app.get("/", function(req, res) {
+app.get("/main.html", function(req, res) {
   // res.send("Welcome to the Star Wars Page!")
-  res.sendFile(path.join(__dirname, "main.html"));
+  res.sendFile(path.join(__dirname, "https://priya1240.github.io/Hot_Restaurant/main.html"));
   //creates absolute path to the file "view.html", depending on where the server is running
 });
 
+app.get("/reserve.html", function(req, res) {
+  // res.send("Welcome to the Star Wars Page!")
+  res.sendFile(path.join(__dirname, "https://priya1240.github.io/Hot_Restaurant/reserve.html"));
+  //creates absolute path to the file "view.html", depending on where the server is running
+});
+
+app.get("/tables.html", function(req, res) {
+  // res.send("Welcome to the Star Wars Page!")
+  res.sendFile(path.join(__dirname, "https://priya1240.github.io/Hot_Restaurant/tables.html"));
+  //creates absolute path to the file "view.html", depending on where the server is running
+});
 // Search for Specific Character (or all characters) - provides JSON
 app.get("/api/:tables?", function(req, res) {
   var chosen = req.params.tables;
