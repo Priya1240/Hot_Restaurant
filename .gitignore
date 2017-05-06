@@ -1,0 +1,4 @@
+# Ignore these npm files
+
+node_modules
+.DS_store
