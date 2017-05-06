@@ -17,7 +17,7 @@
             <h3 class="text-center">Make Your Reservation!</h3>
             <hr>
             <div class="text-center">
-                <a class="text-center" href="/tables">
+                <a class="text-center" href="/tables.html">
                     <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button>
                 </a>
                 <a href="/">
@@ -69,17 +69,17 @@
     $("#add-btn").on("click", function(event) {
         event.preventDefault();
         var newCharacter = {
-            name: $("#name").val().trim(),
-            role: $("#role").val().trim(),
-            age: $("#age").val().trim(),
-            forcePoints: $("#force-points").val().trim()
+            name: $("#customerName").val().trim(),
+            phone: $("#phoneNumber").val().trim(),
+            email: $("#customerEmail").val().trim(),
+            customerId: $("#customerId").val().trim()
         };
 
         // Question: What does this code do??
-        $.post("/api/new", newCharacter)
+        $.post("/api/reserve", newReservation)
             .done(function(data) {
                 console.log(data);
-                alert("Adding character...");
+                alert("Adding Reservation...");
             });
     });
     </script>
