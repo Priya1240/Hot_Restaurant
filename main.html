@@ -19,9 +19,10 @@
         </div>
     <footer class="footer">
       <div class="container">
-            <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
+            <p><a id = "table_link" href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
       </div>
     </footer>
+
     </div>
 <div id="window-resizer-tooltip" style="display: none;"> 
   <a href="#" title="Edit settings"></a>
@@ -33,5 +34,27 @@
   <span class="tooltipWidth" id="vpWidth">669</span>
    x <span class="tooltipHeight" id="vpHeight">649 </span>
 </div>
+<!-- <script type="text/javascript">
+    $("#table_link").on("click", function() {
+      var searchedCharacter = $("#character-search").val().trim();
+
+     searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+
+     $.get("/api/" + searchedCharacter, function(data) {
+        console.log(data);
+        if (data) {
+          $("#stats").show();
+          $("#name").text(data.name);
+          $("#role").text(data.role);
+          $("#age").text(data.age);
+          $("#force-points").text(data.forcePoints);
+        }
+        else {
+          $("#name").text("The force is not strong with this one. Your character was not found.");
+          $("#stats").hide();
+        }
+      });
+    });
+  </script> -->
 </body>
 </html>
